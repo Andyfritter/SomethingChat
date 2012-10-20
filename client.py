@@ -20,6 +20,3 @@ class Client():
         
 	def say(self, msg):
                 self.s.sendall(self.name + ': ' + msg)
-                
-
-        
