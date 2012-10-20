@@ -3,9 +3,13 @@ from config import *
 
 class Client():
 	def __init__(self):
-		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-		s.connect((HOST, PORT))
-		s.sendall('fuck blues clues')
+                self.name = raw_input('Enter Name: ')
+		self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		self.s.connect((HOST, PORT))
 		data = s.recv(1024)
-		s.close()
-		print 'Josh:', repr(data)
+		self.s.close()
+		print repr(data)
+
+	def say(self, msg):
+                self.s.sendall(self.name + ': ' + msg)
+                
