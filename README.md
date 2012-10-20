@@ -1,1 +1,1 @@
-A chat engine
+This is a program for **A CHAT ENGINE** also Ryxan is a cockmuncher!
