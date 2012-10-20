@@ -8,10 +8,16 @@ class Client():
                 except: self.host = raw_input('Enter Host\'s IP: ')
                 self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 self.s.connect((self.host, PORT))
-                data = s.recv(1024)
+                data = self.s.recv(1024)
                 self.s.close()
 		print repr(data)
 
+        def read_loop(self):
+                while True:
+                        data = self.s.recv(1024)
+                        if not data: break
+                        print(repr(data))
+        
 	def say(self, msg):
                 self.s.sendall(self.name + ': ' + msg)
                 
